@@ -6,6 +6,7 @@ If you don't want to read this doc and want to get started with the preview, vis
 ## Azure Automanage
 Azure Automanage for VMs is a service that eliminates the need to discover, know how to onboard, and know how to configure certain services in Azure that would benefit your virtual machine. These services help enhance reliability, security, and management for virtual machines and are considered to be Azure best practices services. 
 Automanage VM Best Practices is available through two different configuration profiles: dev/test and production. The services you are onboarded to are determined by the configuration profile you choose. 
+
 Azure Automanage is currently in public preview for Windows Server VMs and private preview for Linux VMs. Many more details about Automanage (including details on configuration profiles) can be found in our [public documentation](https://docs.microsoft.com/azure/automanage/automanage-virtual-machines). The rest of this document assumes a small degree of familiarity with the Automanage service (skimming the docs will suffice). 
 
 ## Supported Linux distributions
@@ -32,7 +33,9 @@ Automanage for Linux will onboard VMs to the following services:
 This document will be updated as more services are added to Automanage.
 
 It is worth noting that while Microsoft Antimalware is included for Windows Server VMs, Automanage for Linux will not onboard to the Microsoft Antimalware service (it does not have Linux support). We using your own antimalware solution.
+
 It is also worth noting that while Guest Configuration will apply the Linux security baseline, it will only audit for compliance. Any noncompliance with the baseline will not be automatically remediated. Automatic remediation is planned to be delivered before Automanage becomes generally available. More details are available in the Known limitations section of this document.
+
 The table below shows a summary of services onboarded to for each configuration profile for both Linux and Windows. 
  
 ## Getting started with Automanage for Linux
@@ -60,7 +63,6 @@ You may click on the “Show ineligible virtual machines” checkbox to show Lin
 ## Known limitations of private preview
 1.	At the time of writing of this document, ineligible Linux distributions are not filtered out automatically. Please ensure that the VM you are onboarding is running a supported Linux distribution. We are actively working to include unsupported distributions in the eligibility UI and expect this will be resolved during the private preview timeframe. If you do try to onboard an unsupported distribution, be aware that some best practices services may not be properly configured for your VM.
 1.	Guest Configuration will apply the AzureLinuxBaseline to your VM in audit-only mode, and will not attempt to remediate any non-compliance. In other words, you will be able to view the applied baseline on your VM via Guest Assignments in the portal, but non-compliant items won’t automatically be fixed for you. You will need to manually remediate if you would like to be aligned with the Azure Linux baseline. Automatic remediation is planned for delivery before Automanage is generally available. More details about Guest Configuration are available here.
-1.	Currently, once onboarded, the Automanage backend does not check your VM(s) draft status. In other words, if your configuration drifts away from the recommended best practices configuration, Automanage is unable to bring it back into conformance. This functionality is code-complete and is currently rolling out. We expect rollout to complete within a week or two of the time of writing.
 
 ## Feedback
 The private preview phase is the perfect time for you to influence the direction of Automanage for Linux as we work to bring it to the public preview and GA phases. Feel free to reach out to Alfred Sin (alsin@microsoft.com),  Dean Wells (deanwe@microsoft.com), or Meagan McCrory (memccror@microsoft.com) with any questions or feedback at any point in time.
