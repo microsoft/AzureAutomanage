@@ -53,7 +53,7 @@ Once you have reached the Azure portal from the link above, the onboarding proce
 1.	Click on “Select machines” in the following blade
  
 
-1.	In the pane that pops up, you will be able to select your Linux VMs to onboard to Automanage. If you do not your Linux VMs in the list, double check that you are using the private preview link above to access Automanage in the portal. You will notice “microsoft_azure_automanagedvirtualmachines_linuxEnable=true” in your portal URL if you are using the private preview link.
+1.	In the pane that pops up, you will be able to select your Linux VMs to onboard to Automanage. If you do not see your Linux VMs in the list, double check that you are using the private preview link above to access Automanage in the portal. You will notice “microsoft_azure_automanagedvirtualmachines_linuxEnable=true” in your portal URL if you are using the private preview link.
 If you still to not see your Linux VMs in the list, they may not be located in a supported location. More details are available in the prerequisites [here](https://docs.microsoft.com/azure/automanage/automanage-virtual-machines#prerequisites) (ignore the Windows Server prerequisite). 
 You may click on the “Show ineligible virtual machines” checkbox to show Linux VMs that are in an unsupported location.
  
