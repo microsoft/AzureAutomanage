@@ -61,7 +61,6 @@ You may click on the “Show ineligible virtual machines” checkbox to show Lin
 1.	Hit Select, choose your configuration profile (if you want backup and monitoring, choose Production), and hit Enable.
 
 ## Known limitations of private preview
-1.	At the time of writing of this document, ineligible Linux distributions are not filtered out automatically. Please ensure that the VM you are onboarding is running a supported Linux distribution. We are actively working to include unsupported distributions in the eligibility UI and expect this will be resolved during the private preview timeframe. If you do try to onboard an unsupported distribution, be aware that some best practices services may not be properly configured for your VM.
 1.	Guest Configuration will apply the AzureLinuxBaseline to your VM in audit-only mode, and will not attempt to remediate any non-compliance. In other words, you will be able to view the applied baseline on your VM via Guest Assignments in the portal, but non-compliant items won’t automatically be fixed for you. You will need to manually remediate if you would like to be aligned with the Azure Linux baseline. Automatic remediation is planned for delivery before Automanage is generally available. More details about Guest Configuration are available here.
 
 ## Feedback
